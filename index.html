@@ -28,6 +28,7 @@
     <button onclick="redirectToShopee2()">Go to Shopee 2 (intent)</button>
     <button onclick="redirectTolazada3()">Go to Lazada 3</button>
     <button onclick="redirectToShopeeTH4()">Go to Shopee TH 4</button>
+    <button onclick="reidrectToWangYueApp()">Go to Wang Yue app</button>
     
     <div id="log"></div>
 
@@ -80,6 +81,16 @@
                 log("4 Redirect triggered successfully.");
             } catch (error) {
                 log(`4 Error occurred: ${error.message}`);
+            }
+        }
+
+        function reidrectToWangYueApp() {
+            log("5 Starting redirect to Wang Yue App...");
+            try {
+                window.location.href = "wangyue://home";
+                log("5 Redirect triggered successfully.");
+            } catch (error) {
+                log(`5 Error occurred: ${error.message}`);
             }
         }
 
