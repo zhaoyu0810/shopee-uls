@@ -27,7 +27,8 @@
     <button onclick="redirectToShopee1()">Go to Shopee 1</button>
     <button onclick="redirectToShopee2()">Go to Shopee 2 (intent)</button>
     <button onclick="redirectTolazada3()">Go to Lazada 3</button>
-
+    <button onclick="redirectToShopeeTH4()">Go to Shopee TH 4</button>
+    
     <div id="log"></div>
 
     <script>
@@ -71,6 +72,17 @@
                 log(`3 Error occurred: ${error.message}`);
             }
         }
+
+        function redirectToShopeeTH4() {
+            log("4 Starting redirect to Shopee TH...");
+            try {
+                window.location.href = "shopeeth://home?navRoute=eyJwYXRocyI6IFt7IndlYk5hdiI6IHsibmF2YmFyIjogeyJyaWdodEl0ZW1zQ29uZmlnIjogeyJpdGVtcyI6IFt7Iml0ZW1zIjogW3sidHlwZSI6ICJob21lIn0sIHsic2hvcElEIjogNjYyNzkyNzAsICJpdGVtSUQiOiA3Njk0NjM1MzcyLCAidHlwZSI6ICJyZXBvcnRpdGVtIn1dLCAidHlwZSI6ICJtb3JlIn1dfX0sICJ1cmwiOiAiaHR0cHM6Ly9zaG9wZWUuY28udGgvcHJvZHVjdC82NjI3OTI3MC83Njk0NjM1MzcyIiwgImNvbmZpZyI6IHt9fSwgInJuTmF2IjogeyJ1cmwiOiAiaHR0cHM6Ly9zaG9wZWUuY28udGgvcHJvZHVjdC82NjI3OTI3MC83Njk0NjM1MzcyIn19XX0%3D";
+                log("4 Redirect triggered successfully.");
+            } catch (error) {
+                log(`4 Error occurred: ${error.message}`);
+            }
+        }
+
     </script>
 </body>
 </html>
