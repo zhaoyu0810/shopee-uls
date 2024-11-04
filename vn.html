@@ -32,7 +32,7 @@
     <button onclick="reidrectToWangYueApp()">Go to Wang Yue app</button>
 
     <div id="log"></div>
-    <div>Version: 0551</div>
+    <div>Version: 1800</div>
     <script>
       function log(message) {
         const logDiv = document.getElementById("log");
@@ -60,7 +60,7 @@
         log("2 Starting redirect to Shopee (intent)...");
         try {
           window.location.href =
-            "intent://reactPath?navigate_url=https%3A%2F%2Fuat.shopee.co.id%2Fproduct%2F220615538%2F801873931%3Fuls_trackid%3D51491mvh00ko%26user_agent%3DTW96aWxsYS81LjAgKExpbnV4OyBBbmRyb2lkIDYuMDsgTmV4dXMgNSBCdWlsZC9NUkE1OE4pIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xMjkuMC4wLjAgTW9iaWxlIFNhZmFyaS81MzcuMzY%253D%26utm_campaign%3Did_ozZaNV7EVV%26utm_content%3D----%26utm_medium%3Daffiliates%26utm_source%3Dan_11137400000%26utm_term%3Dbzk1ipsmzveb&path=shopee%2FTRANSFER_PAGE&tab=buy&uls_trackid=51491mvh00ko&use_deeplink=1&utm_campaign=id_ozZaNV7EVV&utm_content=----&utm_medium=affiliates&utm_source=an_11137400000&utm_term=bzk1ipsmzveb&version=1#Intent;scheme=shopeeid;end;";
+            "shopeevn://reactPath?navigate_url=https%3A%2F%2Fshopee.vn%2Fproduct%2F175753395%2F6067666440&path=shopee%2FTRANSFER_PAGE&tab=buy&uls_trackid=515tn7v001l4&use_deeplink=1&utm_campaign=-&utm_content=----&utm_medium=affiliates&utm_source=an_17392470034&utm_term=c1p6rccdb5y1&version=1";
           log("2 Redirect triggered successfully.");
         } catch (error) {
           log(`2 Error occurred: ${error.message}`);
