@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirect Button with Log</title>
+    <style>
+      #log {
+        border: 1px solid #ccc;
+        padding: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+        margin-top: 20px;
+      }
+      .log-entry {
+        margin-bottom: 5px;
+        font-family: Arial, sans-serif;
+        font-size: 0.9em;
+      }
+      .log-datetime {
+        color: #888;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="redirectToShopee1()">Go to Shopee 1</button>
+    <button onclick="redirectToShopee2()">Go to Shopee 2 (intent)</button>
+    <button onclick="redirectToShopee3()">Go to Shopee 3 (anchor)</button>
+    <button onclick="redirectTolazada3()">Go to Lazada 3</button>
+    <button onclick="redirectToShopeeTH4()">Go to Shopee TH 4</button>
+    <button onclick="reidrectToWangYueApp()">Go to Wang Yue app</button>
+
+    <div id="log"></div>
+
+    <script>
+      function log(message) {
+        const logDiv = document.getElementById('log');
+        const logEntry = document.createElement('div');
+        logEntry.classList.add('log-entry');
+
+        const dateTime = new Date().toLocaleString();
+        logEntry.innerHTML = `<span class="log-datetime">[${dateTime}]</span> ${message}`;
+
+        logDiv.prepend(logEntry); // Prepend to show the latest log at the top
+      }
+
+      function redirectToShopee1() {
+        log('1 Starting redirect to Shopee...');
+        try {
+          window.location.href =
+            'shopeeid://reactPath?navigate_url=https%3A%2F%2Fuat.shopee.co.id%2Fproduct%2F220615538%2F801873931%3Fuls_trackid%3D51491mvh00ko%26user_agent%3DTW96aWxsYS81LjAgKExpbnV4OyBBbmRyb2lkIDYuMDsgTmV4dXMgNSBCdWlsZC9NUkE1OE4pIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xMjkuMC4wLjAgTW9iaWxlIFNhZmFyaS81MzcuMzY%253D%26utm_campaign%3Did_ozZaNV7EVV%26utm_content%3D----%26utm_medium%3Daffiliates%26utm_source%3Dan_11137400000%26utm_term%3Dbzk1ipsmzveb&path=shopee%2FTRANSFER_PAGE&tab=buy&uls_trackid=51491mvh00ko&use_deeplink=1&utm_campaign=id_ozZaNV7EVV&utm_content=----&utm_medium=affiliates&utm_source=an_11137400000&utm_term=bzk1ipsmzveb&version=1';
+          log('1 Redirect triggered successfully.');
+        } catch (error) {
+          log(`1 Error occurred: ${error.message}`);
+        }
+      }
+
+      function redirectToShopee2() {
+        log('2 Starting redirect to Shopee (intent)...');
+        try {
+          window.location.href =
+            'intent://reactPath?navigate_url=https%3A%2F%2Fuat.shopee.co.id%2Fproduct%2F220615538%2F801873931%3Fuls_trackid%3D51491mvh00ko%26user_agent%3DTW96aWxsYS81LjAgKExpbnV4OyBBbmRyb2lkIDYuMDsgTmV4dXMgNSBCdWlsZC9NUkE1OE4pIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xMjkuMC4wLjAgTW9iaWxlIFNhZmFyaS81MzcuMzY%253D%26utm_campaign%3Did_ozZaNV7EVV%26utm_content%3D----%26utm_medium%3Daffiliates%26utm_source%3Dan_11137400000%26utm_term%3Dbzk1ipsmzveb&path=shopee%2FTRANSFER_PAGE&tab=buy&uls_trackid=51491mvh00ko&use_deeplink=1&utm_campaign=id_ozZaNV7EVV&utm_content=----&utm_medium=affiliates&utm_source=an_11137400000&utm_term=bzk1ipsmzveb&version=1#Intent;scheme=shopeeid;end;';
+          log('2 Redirect triggered successfully.');
+        } catch (error) {
+          log(`2 Error occurred: ${error.message}`);
+        }
+      }
+
+      function redirectToShopee3() {
+        const anchor = document.createElement('a');
+        anchor.href =
+          'shopeeid://reactPath?navigate_url=https%3A%2F%2Fuat.shopee.co.id%2Fproduct%2F220615538%2F801873931%3Fuls_trackid%3D51491mvh00ko%26user_agent%3DTW96aWxsYS81LjAgKExpbnV4OyBBbmRyb2lkIDYuMDsgTmV4dXMgNSBCdWlsZC9NUkE1OE4pIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xMjkuMC4wLjAgTW9iaWxlIFNhZmFyaS81MzcuMzY%253D%26utm_campaign%3Did_ozZaNV7EVV%26utm_content%3D----%26utm_medium%3Daffiliates%26utm_source%3Dan_11137400000%26utm_term%3Dbzk1ipsmzveb&path=shopee%2FTRANSFER_PAGE&tab=buy&uls_trackid=51491mvh00ko&use_deeplink=1&utm_campaign=id_ozZaNV7EVV&utm_content=----&utm_medium=affiliates&utm_source=an_11137400000&utm_term=bzk1ipsmzveb&version=1';
+        document.body.appendChild(anchor);
+        anchor.click();
+      }
+
+      function redirectTolazada3() {
+        log('3 Starting redirect to lazada...');
+        try {
+          window.location.href =
+            'lazada://sg/d?itemId=3214302700&skuId=21808485816&from_msite=1&dsource=smb&autoOpen=true&disableSmb=false&extSceneId=smbv1&dauto=1&dfrom=pdp&deviceType=iOS&omflag=exlaz&browser=safari&exlaz=e_Fapm5gC5ob7Gip8qo24MCfU%2BqLKrZhcYGDvOTyVyVRDCXvTKdNAtBWrJB3e%2FN46Ydp7bFSTDMdxr8GpYT8dO0DcZorIE3A1OD3WnASIas1Y%3D&exlazCookie=c_lzd_byr%3Amm_150030967_51552045_2010552051!sg1245004%3Aclkgg5v301i8u4oie1mcoe%3A%3A&laz_share_info=1365244061_0_100_0_1365246061_null';
+          log('3 Redirect triggered successfully.');
+        } catch (error) {
+          log(`3 Error occurred: ${error.message}`);
+        }
+      }
+
+      function redirectToShopeeTH4() {
+        log('4 Starting redirect to Shopee TH...');
+        try {
+          window.location.href =
+            'shopeeth://home?navRoute=eyJwYXRocyI6IFt7IndlYk5hdiI6IHsibmF2YmFyIjogeyJyaWdodEl0ZW1zQ29uZmlnIjogeyJpdGVtcyI6IFt7Iml0ZW1zIjogW3sidHlwZSI6ICJob21lIn0sIHsic2hvcElEIjogNjYyNzkyNzAsICJpdGVtSUQiOiA3Njk0NjM1MzcyLCAidHlwZSI6ICJyZXBvcnRpdGVtIn1dLCAidHlwZSI6ICJtb3JlIn1dfX0sICJ1cmwiOiAiaHR0cHM6Ly9zaG9wZWUuY28udGgvcHJvZHVjdC82NjI3OTI3MC83Njk0NjM1MzcyIiwgImNvbmZpZyI6IHt9fSwgInJuTmF2IjogeyJ1cmwiOiAiaHR0cHM6Ly9zaG9wZWUuY28udGgvcHJvZHVjdC82NjI3OTI3MC83Njk0NjM1MzcyIn19XX0%3D';
+          log('4 Redirect triggered successfully.');
+        } catch (error) {
+          log(`4 Error occurred: ${error.message}`);
+        }
+      }
+
+      function reidrectToWangYueApp() {
+        log('5 Starting redirect to Wang Yue App...');
+        try {
+          window.location.href = 'wangyue://home';
+          log('5 Redirect triggered successfully.');
+        } catch (error) {
+          log(`5 Error occurred: ${error.message}`);
+        }
+      }
+    </script>
+  </body>
+</html>
